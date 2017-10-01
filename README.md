@@ -1,3 +1,3 @@
-# 内容
+Code snippets of Python.
 
-Python学习笔记。
+- schedule: 用timer实现定时&周期性调度一个任务。

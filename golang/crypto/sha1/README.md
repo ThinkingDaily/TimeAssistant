@@ -1,0 +1,1 @@
+Example of SHA1 algorithm.
