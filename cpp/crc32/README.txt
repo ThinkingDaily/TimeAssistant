@@ -1,0 +1,1 @@
+crc algorithm, codes in uboot source codes.
