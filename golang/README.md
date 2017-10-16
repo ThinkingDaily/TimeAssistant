@@ -16,3 +16,9 @@ Key Points:
 ## sha1
 
 How to calculate the SHA1 of a byte stream.
+
+# Installation
+
+## Ubuntu
+
+    sudo apt install golang-go
