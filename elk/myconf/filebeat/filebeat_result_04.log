@@ -1,0 +1,199 @@
+flying-bird@flyingbird:~$ rm ~/code_snippets/elk/myconf/filebeat/data/registryflying-bird@flyingbird:~$ /home/flying-bird/elk/filebeat-6.0.0-linux-x86/filebeat -e -c /home/flying-bird/code_snippets/elk/myconf/filebeat/filebeat_04.yml
+2017/11/20 15:06:07.819592 beat.go:426: INFO Home path: [/home/flying-bird/elk/filebeat-6.0.0-linux-x86] Config path: [/home/flying-bird/elk/filebeat-6.0.0-linux-x86] Data path: [/home/flying-bird/code_snippets/elk/myconf/filebeat/data] Logs path: [/home/flying-bird/code_snippets/elk/myconf/filebeat/logs]
+2017/11/20 15:06:07.819716 beat.go:433: INFO Beat UUID: 517a470d-cd2f-4eb1-a5a4-15110ab099aa
+2017/11/20 15:06:07.819745 beat.go:192: INFO Setup Beat: filebeat; Version: 6.0.0
+2017/11/20 15:06:07.819973 module.go:80: INFO Beat name: the_shipper
+2017/11/20 15:06:07.820081 metrics.go:23: INFO Metrics logging every 30s
+2017/11/20 15:06:07.820274 beat.go:260: INFO filebeat start running.
+2017/11/20 15:06:07.827197 registrar.go:71: INFO No registry file found under: /home/flying-bird/code_snippets/elk/myconf/filebeat/data/registry. Creating a new registry file.
+2017/11/20 15:06:07.863771 registrar.go:108: INFO Loading registrar data from /home/flying-bird/code_snippets/elk/myconf/filebeat/data/registry
+2017/11/20 15:06:07.863915 registrar.go:119: INFO States Loaded from registrar: 0
+2017/11/20 15:06:07.865625 filebeat.go:260: WARN Filebeat is unable to load the Ingest Node pipelines for the configured modules because the Elasticsearch output is not configured/enabled. If you have already loaded the Ingest Node pipelines or are using Logstash pipelines, you can ignore this warning.
+2017/11/20 15:06:07.865775 crawler.go:44: INFO Loading Prospectors: 3
+2017/11/20 15:06:07.866201 prospector.go:103: INFO Starting prospector of type: log; id: 10041991019795024031 
+2017/11/20 15:06:07.866517 prospector.go:103: INFO Starting prospector of type: log; id: 13786544195834192836 
+2017/11/20 15:06:07.866809 prospector.go:103: INFO Starting prospector of type: log; id: 18084325123834654670 
+2017/11/20 15:06:07.865723 registrar.go:150: INFO Starting Registrar
+2017/11/20 15:06:07.867378 harvester.go:207: INFO Harvester started for file: /home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/bar.err
+2017/11/20 15:06:07.867120 harvester.go:207: INFO Harvester started for file: /home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/bar.log
+2017/11/20 15:06:07.867129 harvester.go:207: INFO Harvester started for file: /home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/foo/test.log
+2017/11/20 15:06:07.867141 crawler.go:78: INFO Loading and starting Prospectors completed. Enabled prospectors: 3
+{
+  "@timestamp": "2017-11-20T15:06:07.867Z",
+  "@metadata": {
+    "beat": "filebeat",
+    "type": "doc",
+    "version": "6.0.0"
+  },
+  "source": "/home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/bar.err",
+  "offset": 11,
+  "message": "bar err 1.",
+  "prospector": {
+    "type": "log"
+  },
+  "fields": {
+    "env": "staging",
+    "foo_app": "foo",
+    "foo_level": "foo_info",
+    "bar_log_level": "info",
+    "bar_log_app": "bar"
+  },
+  "bar_err_level": "error",
+  "bar_err_app": "bar",
+  "beat": {
+    "name": "the_shipper",
+    "hostname": "flyingbird",
+    "version": "6.0.0"
+  }
+}
+{
+  "@timestamp": "2017-11-20T15:06:07.867Z",
+  "@metadata": {
+    "beat": "filebeat",
+    "type": "doc",
+    "version": "6.0.0"
+  },
+  "bar_err_level": "error",
+  "beat": {
+    "name": "the_shipper",
+    "hostname": "flyingbird",
+    "version": "6.0.0"
+  },
+  "source": "/home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/bar.err",
+  "offset": 22,
+  "message": "bar err 2.",
+  "bar_err_app": "bar",
+  "prospector": {
+    "type": "log"
+  },
+  "fields": {
+    "env": "staging",
+    "foo_app": "foo",
+    "foo_level": "foo_info",
+    "bar_log_level": "info",
+    "bar_log_app": "bar"
+  }
+}
+{
+  "@timestamp": "2017-11-20T15:06:07.867Z",
+  "@metadata": {
+    "beat": "filebeat",
+    "type": "doc",
+    "version": "6.0.0"
+  },
+  "message": "Foo 1.",
+  "fields": {
+    "bar_log_level": "info",
+    "bar_log_app": "bar",
+    "env": "staging",
+    "foo_app": "foo",
+    "foo_level": "foo_info"
+  },
+  "prospector": {
+    "type": "log"
+  },
+  "beat": {
+    "name": "the_shipper",
+    "hostname": "flyingbird",
+    "version": "6.0.0"
+  },
+  "source": "/home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/foo/test.log",
+  "offset": 7
+}
+{
+  "@timestamp": "2017-11-20T15:06:07.867Z",
+  "@metadata": {
+    "beat": "filebeat",
+    "type": "doc",
+    "version": "6.0.0"
+  },
+  "source": "/home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/foo/test.log",
+  "offset": 14,
+  "message": "Foo 2.",
+  "fields": {
+    "env": "staging",
+    "foo_app": "foo",
+    "foo_level": "foo_info",
+    "bar_log_level": "info",
+    "bar_log_app": "bar"
+  },
+  "prospector": {
+    "type": "log"
+  },
+  "beat": {
+    "name": "the_shipper",
+    "hostname": "flyingbird",
+    "version": "6.0.0"
+  }
+}
+{
+  "@timestamp": "2017-11-20T15:06:07.867Z",
+  "@metadata": {
+    "beat": "filebeat",
+    "type": "doc",
+    "version": "6.0.0"
+  },
+  "message": "bar log 1.",
+  "prospector": {
+    "type": "log"
+  },
+  "fields": {
+    "env": "staging",
+    "foo_app": "foo",
+    "foo_level": "foo_info",
+    "bar_log_level": "info",
+    "bar_log_app": "bar"
+  },
+  "beat": {
+    "name": "the_shipper",
+    "hostname": "flyingbird",
+    "version": "6.0.0"
+  },
+  "source": "/home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/bar.log",
+  "offset": 11
+}
+{
+  "@timestamp": "2017-11-20T15:06:07.867Z",
+  "@metadata": {
+    "beat": "filebeat",
+    "type": "doc",
+    "version": "6.0.0"
+  },
+  "source": "/home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/bar.log",
+  "offset": 22,
+  "message": "bar log 2.",
+  "prospector": {
+    "type": "log"
+  },
+  "fields": {
+    "env": "staging",
+    "foo_app": "foo",
+    "foo_level": "foo_info",
+    "bar_log_level": "info",
+    "bar_log_app": "bar"
+  },
+  "beat": {
+    "name": "the_shipper",
+    "hostname": "flyingbird",
+    "version": "6.0.0"
+  }
+}
+^C2017/11/20 15:06:10.624047 filebeat.go:311: INFO Stopping filebeat
+2017/11/20 15:06:10.624092 crawler.go:105: INFO Stopping Crawler
+2017/11/20 15:06:10.624111 crawler.go:115: INFO Stopping 3 prospectors
+2017/11/20 15:06:10.624152 prospector.go:137: INFO Prospector ticker stopped
+2017/11/20 15:06:10.624171 prospector.go:159: INFO Stopping Prospector: 18084325123834654670
+2017/11/20 15:06:10.624207 harvester.go:228: INFO Reader was closed: /home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/bar.err. Closing.
+2017/11/20 15:06:10.624256 prospector.go:137: INFO Prospector ticker stopped
+2017/11/20 15:06:10.624216 prospector.go:137: INFO Prospector ticker stopped
+2017/11/20 15:06:10.624283 prospector.go:159: INFO Stopping Prospector: 13786544195834192836
+2017/11/20 15:06:10.624298 prospector.go:159: INFO Stopping Prospector: 10041991019795024031
+2017/11/20 15:06:10.624328 harvester.go:228: INFO Reader was closed: /home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/foo/test.log. Closing.
+2017/11/20 15:06:10.624334 harvester.go:228: INFO Reader was closed: /home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/bar.log. Closing.
+2017/11/20 15:06:10.624403 crawler.go:131: INFO Crawler stopped
+2017/11/20 15:06:10.624426 registrar.go:210: INFO Stopping Registrar
+2017/11/20 15:06:10.624445 registrar.go:165: INFO Ending Registrar
+2017/11/20 15:06:10.660686 metrics.go:51: INFO Total non-zero values:  beat.memstats.gc_next=4473924 beat.memstats.memory_alloc=2286504 beat.memstats.memory_total=2286504 filebeat.events.added=9 filebeat.events.done=9 filebeat.harvester.closed=3 filebeat.harvester.open_files=0 filebeat.harvester.running=0 filebeat.harvester.started=3 libbeat.config.module.running=0 libbeat.output.events.acked=6 libbeat.output.events.batches=1 libbeat.output.events.total=6 libbeat.output.type=console libbeat.output.write.bytes=3409 libbeat.pipeline.clients=0 libbeat.pipeline.events.active=0 libbeat.pipeline.events.filtered=3 libbeat.pipeline.events.published=6 libbeat.pipeline.events.total=9 libbeat.pipeline.queue.acked=6 registrar.states.current=3 registrar.states.update=9 registrar.writes=6
+2017/11/20 15:06:10.660735 metrics.go:52: INFO Uptime: 2.853660403s
+2017/11/20 15:06:10.660750 beat.go:268: INFO filebeat stopped.
+flying-bird@flyingbird:~$ 
