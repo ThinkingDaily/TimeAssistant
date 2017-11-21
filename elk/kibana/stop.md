@@ -1,25 +1,6 @@
 Kibana-运行
 
-# 运行
-
-在配置好数据之后，第一次运行时，不用在后台运行，这样便于发现问题。
-
--h 选项可以显示所有命令参数。
-
-    $ ./bin/kibana
-    [plugin:kibana@5.5.2] Status changed from uninitialized to green - Ready
-    [plugin:elasticsearch@5.5.2] Status changed from uninitialized to yellow - Waiting for Elasticsearch
-    [plugin:console@5.5.2] Status changed from uninitialized to green - Ready
-    [plugin:metrics@5.5.2] Status changed from uninitialized to green - Ready
-    [plugin:timelion@5.5.2] Status changed from uninitialized to green - Ready
-    [listening] Server running at http://localhost:5601
-    [ui settings] Status changed from uninitialized to yellow - Elasticsearch plugin is yellow
-    [plugin:elasticsearch@5.5.2] Status changed from yellow to green - Kibana index ready
-    [ui settings] Status changed from yellow to green - Ready
-     
-验证可以正常运行之后，可以Ctrl+C，然后再以 './bin/kibana &' 方式运行。
-
-# kibana
+# shell
 
 bin/kibana是一个shell脚本:
 
