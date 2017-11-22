@@ -15,7 +15,7 @@ Logstash可以单独运行，调试完毕之后，再通过elasticsearch插件�
 - 运行bin/logstash
 
 # Example: Hello, world!
-          
+
     flying-bird@flyingbird:~/elk/logstash-5.5.2$ ./bin/logstash -e 'input { stdin { } } output { stdout {} }'
     ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console.
     Sending Logstash's logs to /home/flying-bird/elk/logstash-5.5.2/logs which is now configured via log4j2.properties

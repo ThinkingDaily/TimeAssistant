@@ -64,7 +64,3 @@ general fields是应用于Filebeat程序处理的每一条记录。进一步地�
     [bar][err]bar err 2.
 
 另外一一种规避方法，就是（在同一台机器上）启动Filebeat的多个实例，每个实例对应一个log配置。如启动3个实例，分别对应foo-log, bar-log, bar-err三种程序/日志类型。但显然，这远不如grok方式易于管理，且grok方式的可扩展性更高。
-
-
-
-

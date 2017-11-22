@@ -1,27 +1,8 @@
 filebeat-启动项
 
-# 普通日志文件的处理
+# Ref
 
-http://www.elastic.co/guide/en/beats/filebeat/5.5/filebeat-modules-quickstart.html
-
-# 文件修改
-
-    $ ls -l
-    total 31856
-    -rw-r--r--@ 1 user  staff     97026 11  1 02:48 NOTICE
-    -rw-r--r--@ 1 user  staff       811 11  1 02:49 README.md
-    drwxr-x---  3 root       staff       102 11 17 10:38 data
-    -rwxr-xr-x@ 1 user  staff  16088016 11  1 02:49 filebeat
-    -rw-r--r--@ 1 user  staff     38827 11  1 02:49 filebeat.full.yml
-    -rw-r--r--@ 1 user  staff     25087 11  1 02:49 filebeat.template-es2x.json
-    -rw-r--r--@ 1 user  staff     20027 11  1 02:49 filebeat.template-es6x.json
-    -rw-r--r--@ 1 user  staff     20027 11  1 02:49 filebeat.template.json
-    -rw-------@ 1 user  staff      4196 11  1 02:49 filebeat.yml
-    drwxr-xr-x@ 7 user  staff       238 11  1 02:40 module
-    drwxr-xr-x@ 4 user  staff       136 11  1 02:49 scripts
-    $
-
-运行时，会使用到data目录。
+- https://www.elastic.co/guide/en/beats/filebeat/current/command-line-options.html
 
 # help
 
@@ -40,6 +21,7 @@ http://www.elastic.co/guide/en/beats/filebeat/5.5/filebeat-modules-quickstart.ht
       -configtest
             Test configuration and exit.
             测试配置文件的合法性，然后退出程序。
+            6.0及以后版本使用test config子命令。
 
       -cpuprofile string
             Write cpu profile to file
@@ -88,3 +70,18 @@ http://www.elastic.co/guide/en/beats/filebeat/5.5/filebeat-modules-quickstart.ht
       -version
             Print the version and exit
     $ 
+
+
+# -e
+
+help中的说明：
+
+    "input { stdin { type => stdin } }"
+    and if no output is specified, then the
+    following is used as the default output:
+    "output { stdout { codec => rubydebug } }"
+    If you wish to use both defaults, please use
+    the empty string for the '-e' flag.
+    (default: nil)
+
+即缺省值为："input { stdin { type => stdin } } output { stdout { codec => rubydebug } }"
