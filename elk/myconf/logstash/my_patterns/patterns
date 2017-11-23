@@ -1,0 +1,13 @@
+MSECOND \d{3}
+
+DATETIME1 %{YEAR:year:int}-%{MONTHNUM:month:int}-%{MONTHDAY:day:int}T%{HOUR:hour:int}:%{MINUTE:minute:int}:%{SECOND:second:int},%{MSECOND:msecond:int}
+DATETIME2 %{YEAR:year:int}-%{MONTHNUM:month:int}-%{MONTHDAY:day:int}\s%{HOUR:hour:int}:%{MINUTE:minute:int}:%{SECOND:second:int},%{MSECOND:msecond:int}
+DATETIME3 %{YEAR:year:int}-%{MONTHNUM:month:int}-%{MONTHDAY:day:int}\s%{HOUR:hour:int}:%{MINUTE:minute:int}:%{SECOND:second:int}\.%{MSECOND:msecond:int}
+
+DATETIME_ALL %{DATETIME2}|%{DATETIME1}|%{DATETIME3}
+
+DATETIME4 %{YEAR:year}-%{MONTHNUM:month}-%{MONTHDAY:day}T%{HOUR:hour}:%{MINUTE:minute}:%{SECOND:second},%{MSECOND:msecond}
+DATETIME5 %{YEAR:year}-%{MONTHNUM:month}-%{MONTHDAY:day}\s%{HOUR:hour}:%{MINUTE:minute}:%{SECOND:second},%{MSECOND:msecond}
+DATETIME6 %{YEAR:year}-%{MONTHNUM:month}-%{MONTHDAY:day}\s%{HOUR:hour}:%{MINUTE:minute}:%{SECOND:second}\.%{MSECOND:msecond}
+
+DATETIME_ALL2 %{DATETIME4}|%{DATETIME5}|%{DATETIME6}
