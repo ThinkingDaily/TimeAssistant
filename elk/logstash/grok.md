@@ -6,6 +6,7 @@ Logstash - grok
 - [oniguruma/doc/RE](https://github.com/kkos/oniguruma/blob/master/doc/RE)
 - [grok语法规则](http://grokconstructor.appspot.com/RegularExpressionSyntax.txt)
 - [调试工具Grok Constructor](http://grokconstructor.appspot.com/do/match)
+- grok-patterns: https://github.com/logstash-plugins/logstash-patterns-core/blob/master/patterns/grok-patterns
 
 # Key Points
 

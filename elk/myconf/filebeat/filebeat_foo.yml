@@ -396,106 +396,6 @@ filebeat.prospectors:
   # Defines if prospectors is enabled
   #enabled: true
 
-#------------------------------ Log prospector --------------------------------
-- 
-  type: log
-
-  # Change to true to enable this prospector configuration.
-  enabled: true
-
-  # Paths that should be crawled and fetched. Glob based paths.
-  # To fetch all ".log" files from a specific level of subdirectories
-  # /var/log/*/*.log can be used.
-  # For each file found under this path, a harvester is started.
-  # Make sure not file is defined twice as this can lead to unexpected behaviour.
-  paths:
-    - /home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/*.log
-    #- c:\programdata\elasticsearch\logs\*
-
-  # Configure the file encoding for reading files with international characters
-  # following the W3C recommendation for HTML5 (http://www.w3.org/TR/encoding).
-  # Some sample encodings:
-  #   plain, utf-8, utf-16be-bom, utf-16be, utf-16le, big5, gb18030, gbk,
-  #    hz-gb-2312, euc-kr, euc-jp, iso-2022-jp, shift-jis, ...
-  #encoding: plain
-
-
-  # Exclude lines. A list of regular expressions to match. It drops the lines that are
-  # matching any regular expression from the list. The include_lines is called before
-  # exclude_lines. By default, no lines are dropped.
-  #exclude_lines: ['^DBG']
-
-  # Include lines. A list of regular expressions to match. It exports the lines that are
-  # matching any regular expression from the list. The include_lines is called before
-  # exclude_lines. By default, all the lines are exported.
-  #include_lines: ['^ERR', '^WARN']
-
-  # Exclude files. A list of regular expressions to match. Filebeat drops the files that
-  # are matching any regular expression from the list. By default, no files are dropped.
-  #exclude_files: ['.gz$']
-
-  # Optional additional fields. These fields can be freely picked
-  # to add additional information to the crawled log files for filtering
-  fields:
-    bar_log_level: info
-    bar_log_app: bar
-
-  # Set to true to store the additional fields as top level fields instead
-  # of under the "fields" sub-dictionary. In case of name conflicts with the
-  # fields added by Filebeat itself, the custom fields overwrite the default
-  # fields.
-  fields_under_root: false
-
-#------------------------------ Log prospector --------------------------------
-- 
-  type: log
-
-  # Change to true to enable this prospector configuration.
-  enabled: true
-
-  # Paths that should be crawled and fetched. Glob based paths.
-  # To fetch all ".log" files from a specific level of subdirectories
-  # /var/log/*/*.log can be used.
-  # For each file found under this path, a harvester is started.
-  # Make sure not file is defined twice as this can lead to unexpected behaviour.
-  paths:
-    - /home/flying-bird/code_snippets/elk/myconf/filebeat/input_logs/bar/*.err
-    #- c:\programdata\elasticsearch\logs\*
-
-  # Configure the file encoding for reading files with international characters
-  # following the W3C recommendation for HTML5 (http://www.w3.org/TR/encoding).
-  # Some sample encodings:
-  #   plain, utf-8, utf-16be-bom, utf-16be, utf-16le, big5, gb18030, gbk,
-  #    hz-gb-2312, euc-kr, euc-jp, iso-2022-jp, shift-jis, ...
-  #encoding: plain
-
-
-  # Exclude lines. A list of regular expressions to match. It drops the lines that are
-  # matching any regular expression from the list. The include_lines is called before
-  # exclude_lines. By default, no lines are dropped.
-  #exclude_lines: ['^DBG']
-
-  # Include lines. A list of regular expressions to match. It exports the lines that are
-  # matching any regular expression from the list. The include_lines is called before
-  # exclude_lines. By default, all the lines are exported.
-  #include_lines: ['^ERR', '^WARN']
-
-  # Exclude files. A list of regular expressions to match. Filebeat drops the files that
-  # are matching any regular expression from the list. By default, no files are dropped.
-  #exclude_files: ['.gz$']
-
-  # Optional additional fields. These fields can be freely picked
-  # to add additional information to the crawled log files for filtering
-  fields:
-    bar_err_level: error
-    bar_err_app: bar
-
-  # Set to true to store the additional fields as top level fields instead
-  # of under the "fields" sub-dictionary. In case of name conflicts with the
-  # fields added by Filebeat itself, the custom fields overwrite the default
-  # fields.
-  fields_under_root: true
-
 #----------------------------- Stdin prospector -------------------------------
 # Configuration to use stdin input
 #- type: stdin
@@ -775,12 +675,12 @@ output.elasticsearch:
 
 
 #----------------------------- Logstash output ---------------------------------
-#output.logstash:
+output.logstash:
   # Boolean flag to enable or disable the output module.
-  #enabled: true
+  enabled: true
 
   # The Logstash hosts
-  #hosts: ["localhost:5044"]
+  hosts: ["localhost:5044"]
 
   # Number of workers per Logstash host.
   #worker: 1
@@ -1106,7 +1006,7 @@ output.elasticsearch:
 #----------------------------- Console output ---------------------------------
 output.console:
   # Boolean flag to enable or disable the output module.
-  enabled: true
+  enabled: false
 
   # Pretty print json event
   pretty: true
@@ -1130,12 +1030,12 @@ output.console:
 # for all the files in which filebeat needs to store its data. If not set by a
 # CLI flag or in the configuration file, the default for the data path is a data
 # subdirectory inside the home path.
-path.data: /home/flying-bird/code_snippets/elk/myconf/filebeat/data
+path.data: /home/flying-bird/code_snippets/elk/myconf/filebeat/foobar/foo/data
 
 # The logs path for a filebeat installation. This is the default location for
 # the Beat's log files. If not set by a CLI flag or in the configuration file,
 # the default for the logs path is a logs subdirectory inside the home path.
-path.logs: /home/flying-bird/code_snippets/elk/myconf/filebeat/logs
+path.logs: /home/flying-bird/code_snippets/elk/myconf/filebeat/foobar/foo/logs
 
 #============================== Dashboards =====================================
 # These settings control loading the sample dashboards to the Kibana index. Loading
