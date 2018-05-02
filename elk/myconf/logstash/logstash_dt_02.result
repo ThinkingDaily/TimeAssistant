@@ -1,0 +1,28 @@
+2017-11-23T22:34:34,977
+{
+    "@timestamp" => 2017-11-23T14:34:34.977Z,
+      "@version" => "1",
+          "host" => "flyingbird",
+       "message" => "2017-11-23T22:34:34,977"
+}
+2017-11-23 22:73:34.977
+{
+    "@timestamp" => 2017-11-25T02:33:17.921Z,
+      "@version" => "1",
+          "host" => "flyingbird",
+       "temp_ts" => "2017-11-23 22:73:34.977",
+       "message" => "2017-11-23 22:73:34.977",
+          "tags" => [
+        [0] "_dateparsefailure"
+    ]
+}
+2017-11-23 22:3a:34.977
+{
+      "@version" => "1",
+          "host" => "flyingbird",
+    "@timestamp" => 2017-11-25T02:33:26.745Z,
+       "message" => "2017-11-23 22:3a:34.977",
+          "tags" => [
+        [0] "_grokparsefailure"
+    ]
+}

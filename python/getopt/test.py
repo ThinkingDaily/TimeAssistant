@@ -1,5 +1,3 @@
-Python - getopt
-
 #!/usr/bin/env python
 
 import sys
