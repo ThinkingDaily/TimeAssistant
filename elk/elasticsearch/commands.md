@@ -42,3 +42,14 @@
     {
       "name": "Tom"
     }
+
+# Exist Query
+
+- https://www.elastic.co/guide/en/elasticsearch/reference/5.6/query-dsl-exists-query.html
+
+    GET oplog*/_search
+    {
+        "query": {
+            "exists" : { "field" : "status" }
+        }
+    }
