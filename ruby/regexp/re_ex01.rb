@@ -13,7 +13,7 @@ for item in dt_strings
     end
 end
 
-Result:
-
-    Matched. Date: 2018/08/30, Time: 17:14:20, Microseconds: 829128
-    Not match. Value: Now is 2018/08/301 17:14:20.829128.
+'''
+Matched. Date: 2018/08/30, Time: 17:14:20, Microseconds: 829128
+Not match. Value: Now is 2018/08/301 17:14:20.829128.
+'''
