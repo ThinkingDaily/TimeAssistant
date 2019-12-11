@@ -1,0 +1,18 @@
+\documentclass[UTF8, 11pt, a4paper]{ctexart}
+\usepackage{tikz}
+\begin{document}
+
+\begin{tikzpicture}
+\foreach \y in {0,...,5} {
+    \coordinate (Base) at (240:\y);
+
+    \foreach \x in {0,...,\y} {
+        \coordinate (T) at ([shift={(\x, 0)}] Base); % Top
+        \coordinate (L) at ([shift={(240:1)}] T); % Left
+        \coordinate (R) at ([shift={(1, 0)}] L); % Right
+        \draw (T)--(L)--(R)--cycle;
+    }
+}
+\end{tikzpicture}
+
+\end{document}
